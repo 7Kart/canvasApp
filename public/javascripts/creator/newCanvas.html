@@ -1,0 +1,36 @@
+<div>    
+    <div class="modal-header text-center">
+        <h3 class="modal-title">Create new canvas</h3>
+    </div>
+    <div class="modal-body text-center">
+        <ul>
+            <form  class="form-horizontal" name="loginForm">
+                <div class="control-group">
+                    <label class="control-label" for="fileName">Name</label>
+                    <div class="controls">
+                        <input name="name" type="text" id="fileName" placeholder="file name..." ng-model="model.fileName">
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label class="control-label" for="fileWidth">Width</label>
+                    <div class="controls">
+                        <input name="fileWidth" type="text" id="fileWidth" placeholder="400 px" ng-model="model.fileWidth">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="fileHeight">Height</label>
+                    <div class="controls">
+                        <input name="fileHeight" type="text" id="fileHeight" placeholder="400 px" ng-model="model.fileHeight">
+                    </div>
+                </div>
+
+            </form>
+        </ul>           
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>   
+</div>

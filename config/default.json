@@ -1,0 +1,27 @@
+{
+	"application":{
+		"port":3000,
+		"sessions":{
+		    "secret": "keyboard cat",
+		    "resave": false, 
+		    "saveUninitialized": true,
+		    "cookie": {
+		        "httpOnly": true, 
+		        "maxAge": 3600000 
+		    }
+		},
+		"sessionStore":{
+			    "host": "localhost",
+    			"port": 27017,
+			    "db": "canvas",
+			    "stringify": false,
+			    "maxAge": 3600000,
+			    "autoRemoveExpiredSession": true
+		}
+	},
+
+	"mongoose":{
+		"connection":"mongodb://localhost/canvas",
+		"debug":true
+	}
+}

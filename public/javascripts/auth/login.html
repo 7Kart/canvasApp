@@ -1,0 +1,57 @@
+<div>    
+    <div class="modal-header text-center">
+        <h3 ng-if="dataForModel.login" class="modal-title">Sign In</h3>
+        <h3 ng-if="!dataForModel.login" class="modal-title">Registration</h3>
+
+    </div>
+    <div class="modal-body text-center">
+        <ul>
+            <form ng-if="dataForModel.login" class="form-horizontal" name="loginForm">
+                <div class="control-group">
+                    <label class="control-label" for="inputEmail">Email</label>
+                    <div class="controls">
+                        <input name="email" type="text" id="inputEmail" placeholder="Email" ng-model="model.username">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputPassword">Password</label>
+                    <div class="controls">
+                        <input name="password" type="password" id="inputPassword" placeholder="Password" ng-model="model.password">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div  class="controls">
+                        <label class="checkbox">
+                        <input type="checkbox"> Remind me
+                        </label>                        
+                    </div>
+                </div>
+            </form>
+            <form ng-if="!dataForModel.login" class="form-horizontal" name="regForm">
+                <div class="control-group">
+                    <label class="control-label" for="inputEmail">Email</label>
+                    <div class="controls">
+                        <input name="Email" type="text" id="inputEmail" placeholder="Email" ng-model="model.username">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputPassword">Password</label>
+                    <div class="controls">
+                        <input name="password" type="password" id="inputPassword" placeholder="Password" ng-model="model.password">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputPassword">Repeat password</label>
+                    <div class="controls">
+                        <input name="repeatPassword" type="password" id="inputPassword" placeholder="Password" ng-model="model.passwordRepeat">
+                    </div>
+                </div>
+            </form>
+            <h3 ng-if="message" class="bg-danger">{{message}}</h3>
+        </ul>           
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="send()">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>   
+</div>

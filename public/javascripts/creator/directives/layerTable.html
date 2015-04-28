@@ -1,0 +1,23 @@
+<table class="table table-bordered">
+    <thead>
+        <tr >
+            <th style="text-align:center"><i class="glyphicon glyphicon-eye-open"></i></th>
+            <th style="text-align:center"><i class="glyphicon glyphicon-trash"></i></th>                        
+            <th colspan="2" style="text-align:center">Layers</th>
+        </tr>
+    </thead>
+    <tbody style="text-align:center">
+        <tr ng-repeat="layer in currnetFile.layers">
+            <td>
+                <input type="checkbox" ng-checked="layer.visible" ng-click="layer.visible = ! layer.visible">
+            </td>
+             <td>
+                <i class="glyphicon glyphicon-trash" ng-click="deleteLayer($index)"></i>
+            </td>
+            <td>{{layer.name}}</td>
+        </tr>
+        <tr>
+            <td ng-click="openCreateLayerModal()"> <i class="glyphicon glyphicon-plus"></i></td>
+        </tr>
+    </tbody>
+</table>
