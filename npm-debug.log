@@ -1,0 +1,139 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'i',
+1 verbose cli   'express-session',
+1 verbose cli   '--save' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.37
+4 verbose node symlink /usr/bin/node
+5 verbose readDependencies using package.json deps
+6 verbose cache add [ 'express-session', null ]
+7 verbose cache add name=undefined spec="express-session" args=["express-session",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: 'express-session',
+8 verbose parsed url   path: 'express-session',
+8 verbose parsed url   href: 'express-session' }
+9 silly lockFile 6ca9c35e-express-session express-session
+10 verbose lock express-session /home/arttyom/.npm/6ca9c35e-express-session.lock
+11 silly lockFile 6ca9c35e-express-session express-session
+12 silly lockFile 6ca9c35e-express-session express-session
+13 verbose addNamed [ 'express-session', '' ]
+14 verbose addNamed [ null, '*' ]
+15 silly lockFile 03cac062-express-session express-session@
+16 verbose lock express-session@ /home/arttyom/.npm/03cac062-express-session.lock
+17 silly addNameRange { name: 'express-session', range: '*', hasData: false }
+18 verbose request where is /express-session
+19 verbose request registry https://registry.npmjs.org/
+20 verbose request id 1d87fb5f0fde1d2b
+21 verbose url raw /express-session
+22 verbose url resolving [ 'https://registry.npmjs.org/', './express-session' ]
+23 verbose url resolved https://registry.npmjs.org/express-session
+24 verbose request where is https://registry.npmjs.org/express-session
+25 info trying registry request attempt 1 at 23:21:53
+26 verbose etag "7VTVXGETQGKOABI8OHL7F5HZO"
+27 http GET https://registry.npmjs.org/express-session
+28 http 200 https://registry.npmjs.org/express-session
+29 silly registry.get cb [ 200,
+29 silly registry.get   { date: 'Tue, 28 Apr 2015 20:21:27 GMT',
+29 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+29 silly registry.get     etag: '"CEGLF7AT4VL3TX7YWQCLPTNFW"',
+29 silly registry.get     'content-type': 'application/json',
+29 silly registry.get     'cache-control': 'max-age=60',
+29 silly registry.get     'content-length': '80172',
+29 silly registry.get     'accept-ranges': 'bytes',
+29 silly registry.get     via: '1.1 varnish',
+29 silly registry.get     age: '0',
+29 silly registry.get     'x-served-by': 'cache-ams4143-AMS',
+29 silly registry.get     'x-cache': 'HIT',
+29 silly registry.get     'x-cache-hits': '1',
+29 silly registry.get     'x-timer': 'S1430252487.312708,VS0,VE166',
+29 silly registry.get     vary: 'Accept',
+29 silly registry.get     'keep-alive': 'timeout=10, max=50',
+29 silly registry.get     connection: 'Keep-Alive' } ]
+30 silly addNameRange number 2 { name: 'express-session', range: '*', hasData: true }
+31 silly addNameRange versions [ 'express-session',
+31 silly addNameRange   [ '1.0.0',
+31 silly addNameRange     '1.0.1',
+31 silly addNameRange     '1.0.2',
+31 silly addNameRange     '1.0.3',
+31 silly addNameRange     '1.0.4',
+31 silly addNameRange     '1.1.0',
+31 silly addNameRange     '1.2.0',
+31 silly addNameRange     '1.2.1',
+31 silly addNameRange     '1.3.0',
+31 silly addNameRange     '1.3.1',
+31 silly addNameRange     '1.4.0',
+31 silly addNameRange     '1.5.0',
+31 silly addNameRange     '1.5.1',
+31 silly addNameRange     '1.5.2',
+31 silly addNameRange     '1.6.0',
+31 silly addNameRange     '1.6.1',
+31 silly addNameRange     '1.6.2',
+31 silly addNameRange     '1.6.3',
+31 silly addNameRange     '1.6.4',
+31 silly addNameRange     '1.6.5',
+31 silly addNameRange     '1.7.0',
+31 silly addNameRange     '1.7.1',
+31 silly addNameRange     '1.7.2',
+31 silly addNameRange     '1.7.3',
+31 silly addNameRange     '1.7.4',
+31 silly addNameRange     '1.7.5',
+31 silly addNameRange     '1.7.6',
+31 silly addNameRange     '1.8.0',
+31 silly addNameRange     '1.8.1',
+31 silly addNameRange     '1.8.2',
+31 silly addNameRange     '1.9.0',
+31 silly addNameRange     '1.9.1',
+31 silly addNameRange     '1.9.2',
+31 silly addNameRange     '1.9.3',
+31 silly addNameRange     '1.10.0',
+31 silly addNameRange     '1.10.1',
+31 silly addNameRange     '1.10.2',
+31 silly addNameRange     '1.10.3',
+31 silly addNameRange     '1.10.4',
+31 silly addNameRange     '1.11.0',
+31 silly addNameRange     '1.11.1' ] ]
+32 verbose addNamed [ 'express-session', '1.11.1' ]
+33 verbose addNamed [ '1.11.1', '1.11.1' ]
+34 silly lockFile f1392ca6-express-session-1-11-1 express-session@1.11.1
+35 verbose lock express-session@1.11.1 /home/arttyom/.npm/f1392ca6-express-session-1-11-1.lock
+36 silly lockFile 68c3999e-ssion-express-session-1-11-1-tgz https://registry.npmjs.org/express-session/-/express-session-1.11.1.tgz
+37 verbose lock https://registry.npmjs.org/express-session/-/express-session-1.11.1.tgz /home/arttyom/.npm/68c3999e-ssion-express-session-1-11-1-tgz.lock
+38 verbose addRemoteTarball [ 'https://registry.npmjs.org/express-session/-/express-session-1.11.1.tgz',
+38 verbose addRemoteTarball   '607eb9458e9e98c1ab576e3408f5c8d9019fe633' ]
+39 info retry fetch attempt 1 at 23:21:54
+40 verbose fetch to= /tmp/npm-6287-6-gwxhho/registry.npmjs.org/express-session/-/express-session-1.11.1.tgz
+41 http GET https://registry.npmjs.org/express-session/-/express-session-1.11.1.tgz
+42 http 200 https://registry.npmjs.org/express-session/-/express-session-1.11.1.tgz
+43 silly lockFile 68c3999e-ssion-express-session-1-11-1-tgz https://registry.npmjs.org/express-session/-/express-session-1.11.1.tgz
+44 silly lockFile 68c3999e-ssion-express-session-1-11-1-tgz https://registry.npmjs.org/express-session/-/express-session-1.11.1.tgz
+45 silly lockFile f1392ca6-express-session-1-11-1 express-session@1.11.1
+46 silly lockFile f1392ca6-express-session-1-11-1 express-session@1.11.1
+47 silly lockFile 03cac062-express-session express-session@
+48 silly lockFile 03cac062-express-session express-session@
+49 error Error: EACCES, mkdir '/home/arttyom/.npm/express-session/1.11.1'
+49 error  { [Error: EACCES, mkdir '/home/arttyom/.npm/express-session/1.11.1']
+49 error   errno: 3,
+49 error   code: 'EACCES',
+49 error   path: '/home/arttyom/.npm/express-session/1.11.1',
+49 error   parent: 'myapp' }
+50 error Please try running this command again as root/Administrator.
+51 error System Linux 3.13.0-49-generic
+52 error command "/usr/bin/node" "/usr/bin/npm" "i" "express-session" "--save"
+53 error cwd /home/arttyom/Documents/myapp
+54 error node -v v0.10.37
+55 error npm -v 1.4.28
+56 error path /home/arttyom/.npm/express-session/1.11.1
+57 error code EACCES
+58 error errno 3
+59 error stack Error: EACCES, mkdir '/home/arttyom/.npm/express-session/1.11.1'
+60 verbose exit [ 3, true ]
