@@ -4,14 +4,4 @@ function drawCircle(ctx, Xo, Yo, r, fill){
 	(fill) ? ctx.fill() : ctx.stroke();
 }
 
-function drawMechanik(){
-	var clickX = [];
-	var clickY = [];
-	var clickDrag = [];
 
-	function addClick(x, y, dragging){
-		clickX.push(x);
-		clickY.push(y);
-		clickDrag(dragging);
-	}
-}
