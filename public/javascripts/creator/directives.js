@@ -59,21 +59,29 @@ creatorDirectives.directive("draw", function(){
 			});
 
 			element.on('mousedown',function(e){
-				element.on('mousemove',onPaint);
+				if(scope.instrument === "pencil"){
+					element.on('mousemove',onPaint);
+				}
 				mouse.x =  (typeof(e.offsetX) !== 'undefined') ? e.offsetX : e.layerX;
 				mouse.y = (typeof(e.offsetY) !== 'undefined') ? e.offsetY : e.layerY;
 				ppts.push({x:mouse.x, y:mouse.y});
-
-				onPaint();
+				if(scope.instrument === "pencil"){
+					onPaint();
+				}
 			});
 
 			element.on('mouseup', function(e){
-				element.off('mousemove', onPaint);
+				if(scope.instrument === "pencil"){
+					element.off('mousemove', onPaint);
+				}
 				context.clearRect(0, 0, context.width, context.height);
 				ppts = [];
 			});
 
 			element.on('mouseleave', function(e){
+				if(scope.instrument === "pencil"){
+					element.off('mousemove', onPaint);
+				}
 				context.clearRect(0, 0, context.width, context.height);
 				ppts = [];
 			});
@@ -81,22 +89,12 @@ creatorDirectives.directive("draw", function(){
 			function onPaint() {					
 				// Saving all the points in an array
 				ppts.push({x: mouse.x, y: mouse.y});
-							
-				context.lineWidth = 1;
-				context.lineJoin = 'round';
-				context.lineCap = 'round';
-				context.strokeStyle = 'blue';
-				context.fillStyle = 'blue';
+				
+				drawSettings(context, 1, 'round', 'round', 'blue', 'blue')	
 
 				if (ppts.length < 3) {
 					var b = ppts[0];
-					context.beginPath();
-					//context.moveTo(b.x, b.y);
-					//context.lineTo(b.x+50, b.y+50);
-					context.arc(b.x, b.y, context.lineWidth / 2, 0, Math.PI * 2, !0);
-					context.fill();
-					context.closePath();
-					
+					drawArc(context, b.x, b.y, context.lineWidth / 2, 0, Math.PI * 2, !0, true);
 					return;
 				}
 				
