@@ -2,6 +2,6 @@
 
 ## Installation
 
-In root directory
->>> npm install
->>> npm start
+In root directory  
+>>> npm install  
+>>> npm start  
