@@ -10,9 +10,12 @@
   "moduleType": [],
   "private": true,
   "dependencies": {
-    "angular": "~1.4.7"
+    "angular": "~1.4.7",
+    "bootstrap": "~3.3.5",
+    "normalize-css": "normalize.css#~3.0.3",
+    "jquery-ui": "~1.11.4",
+    "angular-loading-bar": "~0.8.0"
   },
-
   "appPath": "assets/js",
   "testPath": "assets/js/test"
 }

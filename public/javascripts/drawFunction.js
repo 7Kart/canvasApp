@@ -23,7 +23,6 @@ function drawArc(ctx, x, y, r, startAngle, endAngle, counterclockwise, fill){
 	ctx.closePath();
 }
 
-
 function drawQuadraticCurveTo(ctx, Xo, Yo, Xc, Yc, Xk, YK, fill){
 	ctx.beginPath();
 	context.moveTo(Xo, Yo);

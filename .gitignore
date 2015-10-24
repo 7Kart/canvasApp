@@ -1,4 +1,6 @@
 .idea
 node_modules
 bower_components
+/public/main.css
+/public/js
 npm-debug.log
