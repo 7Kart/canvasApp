@@ -24,7 +24,7 @@ gulp.task('less', function() {
 var js_files = {
     'main.js': [
         './bower_components/angular/angular.min.js',
-        './assets/scripts/controllers/test.js'
+        './assets/js/scripts/app.js'
     ]
 };
 
@@ -47,6 +47,11 @@ gulp.task('watch', function() {
     gulp.watch('./assets/*.less', ['less']);
     gulp.watch('./assets/*/**.less', ['less']);
     gulp.watch('./assets/*/**.js', ['js']);
+    gulp.watch('./assets/*.js', ['js']);
+    gulp.watch('./assets/**.js', ['js']);
+    gulp.watch('./assets/js/*/**.js', ['js']);
+
+
 });
 
 gulp.task('default', ['js', 'less', 'watch']);
