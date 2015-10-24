@@ -1,4 +1,18 @@
 {
-    "appPath": "assets/js",
-    "testPath": "assets/js/test"
+  "name": "canvasApp",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Yuriy Perevoznikov <yuriless@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/7Kart/canvasApp",
+  "moduleType": [],
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.7"
+  },
+
+  "appPath": "assets/js",
+  "testPath": "assets/js/test"
 }
