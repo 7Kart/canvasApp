@@ -78,7 +78,7 @@ var canvasApp = angular.module('canvasApp',[
 					logReqCallback(result);
 				})
 			}
-		}		
+		}
 			
 		$scope.cancel = function () {
 			$modalInstance.dismiss('cancel');
