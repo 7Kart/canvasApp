@@ -1,6 +1,16 @@
 
-<ul class="toolbox">
-    <li class="toolbox__tool">
+<ul class="toolbox" data-ng-controller="DrawToolboxCtrl">
+    <li class="toolbox__title">Tools</li>
+    <li class="toolbox__tool" data-ng-click="setTool('pen')">
         <i class="glyphicon glyphicon-pencil"></i>
+    </li>
+    <li class="toolbox__tool">
+        <i class="glyphicon glyphicon-move" data-ng-click="setTool('move')"></i>
+    </li>
+    <li class="toolbox__tool">
+        <i class="glyphicon glyphicon-text-size" data-ng-click="setTool('text-size')"></i>
+    </li>
+    <li class="toolbox__tool">
+        <i class="glyphicon glyphicon-fullscreen" data-ng-click="setTool('fullscreen')"></i>
     </li>
 </ul>
