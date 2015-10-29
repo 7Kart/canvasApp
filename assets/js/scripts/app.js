@@ -11,4 +11,5 @@ var canvasApp = angular.module('canvasApp',['ui.router'])
 	})
 .run(function($rootScope){
 	console.log("run apps");
+
 })
