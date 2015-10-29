@@ -1,4 +1,5 @@
-var canvasApp = angular.module('canvasApp',['ui.router'])
+
+var canvasApp = angular.module('canvasApp', ['ui.router'])
 	.config(function($stateProvider, $urlRouterProvider) {
 
 		$urlRouterProvider.otherwise("/draw");
@@ -11,5 +12,4 @@ var canvasApp = angular.module('canvasApp',['ui.router'])
 	})
 .run(function($rootScope){
 	console.log("run apps");
-
-})
+});

@@ -48,6 +48,7 @@ gulp.task('js', function() {
 gulp.task('watch', function() {
     gulp.watch('./assets/*.less', ['less']);
     gulp.watch('./assets/*/**.less', ['less']);
+    gulp.watch('./assets/less/*/**.less', ['less']);
     gulp.watch('./assets/*/**.js', ['js']);
     gulp.watch('./assets/*.js', ['js']);
     gulp.watch('./assets/**.js', ['js']);
