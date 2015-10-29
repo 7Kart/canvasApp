@@ -24,6 +24,7 @@ gulp.task('less', function() {
 var js_files = {
     'main.js': [
         './bower_components/angular/angular.min.js',
+        './bower_components/angular-ui-router/release/angular-ui-router.min.js',
         './assets/js/scripts/app.js',
         './assets/js/scripts/controllers/navbar.js',
     ]
