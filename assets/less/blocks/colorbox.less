@@ -1,0 +1,35 @@
+.colorbox {
+  padding: 10px;
+  margin: 0;
+  width: 100px;
+  position: relative;
+}
+  .colorbox__title {
+    text-align: center;
+  }
+  .colorbox__color {
+    position: absolute;
+    display: block;
+    background: red;
+    top: 35px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+    cursor: pointer;
+    border: 1px solid #EEEEEE;
+  }
+    .colorbox__color_front {
+      display: block;
+      background: #ecd6ae;
+      top: 35px;
+      left: 10px;
+      z-index: 2;
+    }
+    .colorbox__color_back {
+      display: block;
+      background: #e3efd5;
+      top: 60px;
+      left: 35px;
+      z-index: 1;
+    }
