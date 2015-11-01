@@ -10,6 +10,7 @@
         "./assets/js/scripts/controllers/navbar.js",
         "./assets/js/scripts/controllers/drawtoolbox.js",
         "./assets/js/scripts/controllers/drawcanvas.js",
+        "./assets/js/scripts/controllers/drawcolorbox.js",
         "./assets/js/scripts/services/drawerstate.js"
     ]
 }

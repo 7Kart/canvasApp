@@ -1,0 +1,11 @@
+<div class="colorbox" data-ng-controller="DrawColorboxCtrl">
+    <div class="colorbox__title">Colors</div>
+    <div
+        class="colorbox__color colorbox__color_front"
+        style="background: {{ frontColor }}"
+        data-ng-click="randomFrontColor();"></div>
+    <div
+        class="colorbox__color colorbox__color_back"
+        style="background: {{ backColor }}"
+        data-ng-click="randomBackColor();"></div>
+</div>
