@@ -1,5 +1,9 @@
 
-var canvasApp = angular.module('canvasApp', ['ui.router'])
+var canvasApp = angular.module('canvasApp', [
+	'ui.router',
+	'ui.bootstrap',
+	'ui.bootstrap.tpls'
+])
 	.config(function($stateProvider, $urlRouterProvider) {
 
 		$urlRouterProvider.otherwise("/draw");
@@ -10,6 +14,7 @@ var canvasApp = angular.module('canvasApp', ['ui.router'])
 				templateUrl: "jspartials/draw.html"
 			})
 	})
-.run(function($rootScope){
-	console.log("run apps");
-});
+
+	.run(function($rootScope){
+		console.log("run apps");
+	});

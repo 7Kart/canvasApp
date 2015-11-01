@@ -1,0 +1,28 @@
+<div>
+    <form name="newFile" ng-submit="newFileSubmit()">
+        <div class="modal-header text-center">
+            <h3 class="modal-title">Create new file</h3>
+        </div>
+            <div class="modal-body text-center">
+                <div>
+                    <label class="file__label">File's name</label>
+                    <input name="fileName" ng-model="fileData.fileName" required/>
+                </div>
+                <span ng-show="newFile.fileName.$error.required">Show me your number</span>
+                <div>
+                    <label class="file__label">Width</label>
+                    <input name="fileWidth" ng-model="fileData.fileWidth"/>
+                </div>
+                <div>
+                    <label class="file__label">Height</label>
+                    <input name="fileHeight" ng-model="fileData.fileHeight"/>
+                </div>
+            </div>
+        <div class="modal-footer">
+            <!--<button class="btn btn-primary" type="button" ng-click="ok()">OK</button>-->
+            <input class="btn btn-primary" type="submit" value="Create file">
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </form>
+
+</div>

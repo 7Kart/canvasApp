@@ -1,6 +1,10 @@
 {
     "main.js": [
+        "./bower_components/jquery/dist/jquery.js",
         "./bower_components/angular/angular.min.js",
+        "./bower_components/bootstrap/dist/js/bootstrap.min.js",
+        "./bower_components/angular-bootstrap/ui-bootstrap.min.js",
+        "./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js",
         "./bower_components/angular-ui-router/release/angular-ui-router.min.js",
         "./assets/js/scripts/app.js",
         "./assets/js/scripts/controllers/navbar.js",
