@@ -8,14 +8,14 @@
                     <label class="file__label">File's name</label>
                     <input name="fileName" ng-model="fileData.fileName" required/>
                 </div>
-                <span ng-show="newFile.fileName.$error.required">Show me your number</span>
+                <span class="alert alert-danger" ng-show="newFile.fileName.$dirty && newFile.fileName.$error.required">File's  name can't be empty</span>
                 <div>
                     <label class="file__label">Width</label>
-                    <input name="fileWidth" ng-model="fileData.fileWidth"/>
+                    <input type="number" name="fileWidth" ng-model="fileData.fileWidth"/>
                 </div>
                 <div>
                     <label class="file__label">Height</label>
-                    <input name="fileHeight" ng-model="fileData.fileHeight"/>
+                    <input type="number" name="fileHeight" ng-model="fileData.fileHeight"/>
                 </div>
             </div>
         <div class="modal-footer">
