@@ -1,0 +1,81 @@
+
+/*
+
+#
+# Example
+#
+
+<div class="page-cols__wrapper">
+  <div class="page-cols__content">
+    Central column content
+  </div>
+</div>
+
+<div class="page-cols__left">
+  Left column content
+</div>
+
+<div class="page-cols__right">
+  Right column content
+</div>
+
+*/
+
+@page-cols-left-width: 100px;
+@page-cols-right-width: 300px;
+
+.page-cols {
+
+}
+
+  .page-cols__wrapper {
+    float: left;
+    width: 100%;
+  }
+
+  .page-cols__content {
+    margin: 0 @page-cols-right-width 0 @page-cols-left-width; /*Margins for content column. Should be "0 RightColumnWidth 0 LeftColumnWidth*/
+  }
+
+  .page-cols__left {
+    float: left;
+    width: @page-cols-left-width; /*Width of left column*/
+    margin-left: -100%;
+  }
+
+  .page-cols__right {
+    float: left;
+    width: @page-cols-right-width; /*Width of right column*/
+    margin-left: -@page-cols-right-width; /*Set left marginto -(RightColumnWidth)*/
+  }
+
+@media (max-width: 840px){ /* 1st level responsive layout break point- drop right column down*/
+
+  .page-cols__left {
+    margin-left: -100%;
+  }
+
+  .page-cols__right {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    clear: both;
+  }
+
+  .page-cols__content {
+    margin-right: 0; /*Set margin to LeftColumnWidth*/
+  }
+}
+
+@media (max-width: 600px){ /* 2nd level responsive layout break point- drop left column down */
+  .page-cols__left {
+    float: none;
+    width: 100%;
+    clear: both;
+    margin-left: 0;
+  }
+
+  .page-cols__content {
+    margin-left: 0;
+  }
+}

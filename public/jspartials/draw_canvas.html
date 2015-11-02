@@ -7,5 +7,10 @@
         <uib-tab justified="true" ng-click="setCurrentFileId(file.id)" ng-repeat="file in files" heading="{{file.name}}">Static content</uib-tab>
     </uib-tabset>
 
+    <div class="canvas__message" ng-if="files.length==0">
+        There is no open files yet.<br />
+        Create one from top menu.
+    </div>
+
 
 </div>

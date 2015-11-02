@@ -8,7 +8,7 @@
  * Controller of the canvasAppApp
  */
 angular.module('canvasApp')
-  .controller('DrawInfoCtrl', ['$scope', 'DrawerState', function ($scope, DrawerState) {
+  .controller('DrawInfoCtrl', ['$scope', 'DrawerState', 'filesFactory', function ($scope, DrawerState, FilesFactory) {
 
         $scope.getZoom = function() {
             return DrawerState.getZoom();
@@ -23,6 +23,10 @@ angular.module('canvasApp')
         };
         $scope.getBackColor = function() {
             return DrawerState.getBackgroundColor();
+        };
+
+        $scope.getFilesCount = function() {
+            return FilesFactory.getAllFiles().length;
         };
 
     }]);
