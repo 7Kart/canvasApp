@@ -1,0 +1,28 @@
+<div>
+    <form name="newLayer" ng-submit="newLayerSubmit()">
+        <div class="modal-header text-center">
+            <h3 class="modal-title">Create new layer</h3>
+        </div>
+            <div class="modal-body text-center">
+                <div>
+                    <label class="file__label">Layer's name</label>
+                    <input name="layerName" ng-model="newLayerData.layerName" required/>
+                </div>
+                <span class="alert alert-danger" ng-show="newLayer.layerName.$dirty && newLayer.layerName.$error.required">Layer's  name can't be empty</span>
+                <div>
+                    <label class="file__label">Width</label>
+                    <input type="number" name="layerWidth" ng-model="newLayerData.layerWidth"/>
+                </div>
+                <div>
+                    <label class="file__label">Height</label>
+                    <input type="number" name="layerHeight" ng-model="newLayerData.layerHeight"/>
+                </div>
+            </div>
+        <div class="modal-footer">
+            <!--<button class="btn btn-primary" type="button" ng-click="ok()">OK</button>-->
+            <input class="btn btn-primary" type="submit" value="Create file">
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </form>
+
+</div>

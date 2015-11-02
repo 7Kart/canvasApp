@@ -12,6 +12,13 @@ angular.module('canvasApp')
     // Service logic
     // ...
 
+    var File = function(data){
+      this.name = data.fileName;
+      this.width = data.fileWidth;
+      this.height = data.fileHeight;
+      this.layers = [];
+    };
+
     var files =  [];
 
     var currnetFile = null;
@@ -22,12 +29,19 @@ angular.module('canvasApp')
         return currnetFile;
       },
 
+      setCurrentFIle:function(file){
+        currnetFile = file;
+      },
+
       getAllFiles: function(){
         return files;
       },
 
+      //watch
+
       makeFile: function(fileData){
-        files.push(fileData);
+        var newFile = new File(fileData);
+        files.push(newFile);
       }
     };
   });
