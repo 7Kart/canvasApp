@@ -12,7 +12,8 @@ angular.module('canvasApp')
     // Service logic
     // ...
 
-    var File = function(data){
+    var File = function(id, data){
+      this.id = id;
       this.name = data.fileName;
       this.width = data.fileWidth;
       this.height = data.fileHeight;
@@ -21,26 +22,37 @@ angular.module('canvasApp')
 
     var files =  [];
 
-    var currnetFile = null;
+    function makeId(array){
+      var id = array.length;
+      for(var ell=0; ell<array.length; ell++){
+        if(id==array[ell].id){
+          ell = 0;
+          id++;
+        }
+      }
+      return id;
+    }
+
+    var currentFile = null;
 
     // Public API here
     return {
       getCurrentFile: function(){
-        return currnetFile;
+        return currentFile;
       },
 
       setCurrentFIle:function(file){
-        currnetFile = file;
+        currentFile = file;
       },
 
       getAllFiles: function(){
         return files;
       },
 
-      //watch
-
       makeFile: function(fileData){
-        var newFile = new File(fileData);
+        var newFileId = makeId(files);
+        var newFile = new File(newFileId, fileData);
+        console.log("newFile", newFile);
         files.push(newFile);
       }
     };

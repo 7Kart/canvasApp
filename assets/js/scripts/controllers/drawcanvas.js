@@ -9,9 +9,10 @@
  */
 angular.module('canvasApp')
   .controller('DrawCanvasCtrl', ['$scope', 'filesFactory', 'DrawerState',  function ($scope,filesFactory, DrawerState) {
+      $scope.filesFactory = filesFactory;
 
       $scope.files = filesFactory.getAllFiles();
-
+      
       $scope.setCurrentFIle = filesFactory.setCurrentFIle;
         
       $scope.getCurrentTool = function() {
@@ -22,7 +23,11 @@ angular.module('canvasApp')
 
     .controller('LayerCanvasCtrl',['$scope', 'filesFactory', "$uibModal", function($scope, filesFactory,  $uibModal){
 
-        $scope.currentFile = filesFactory.getCurrentFile();
+        $scope.filesFactory = filesFactory;
+
+        $scope.$watch('filesFactory.getCurrentFile()', function(currrentFile){
+            $scope.currrentFile = currrentFile;
+        });
 
         $scope.openNewLayerModal = function () {
 
