@@ -8,13 +8,18 @@
  * Controller of the canvasAppApp
  */
 angular.module('canvasApp')
-  .controller('DrawCanvasCtrl', ['$scope', 'filesFactory', 'DrawerState',  function ($scope,filesFactory, DrawerState) {
-      $scope.filesFactory = filesFactory;
+  .controller('DrawCanvasCtrl', ['$scope', 'filesFactory', 'DrawerState',  function ($scope, filesFactory, DrawerState) {
 
       $scope.files = filesFactory.getAllFiles();
-      
-      $scope.setCurrentFIle = filesFactory.setCurrentFIle;
+
+      $scope.watchFilesFactory = filesFactory;
         
+      $scope.$watch('watchFilesFactory.makeFile', function(){
+          console.log("file was made");
+      });  
+
+      $scope.setCurrentFileId = DrawerState.setCurrentFileId;
+
       $scope.getCurrentTool = function() {
           return DrawerState.getCurrentTool();
       };

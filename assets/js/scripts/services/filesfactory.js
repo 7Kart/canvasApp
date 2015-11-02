@@ -8,7 +8,7 @@
  * Factory in the canvasApp.
  */
 angular.module('canvasApp')
-  .factory('filesFactory', function () {
+  .factory('filesFactory', function ($rootScope) {
     // Service logic
     // ...
 
@@ -33,17 +33,8 @@ angular.module('canvasApp')
       return id;
     }
 
-    var currentFile = null;
-
     // Public API here
     return {
-      getCurrentFile: function(){
-        return currentFile;
-      },
-
-      setCurrentFIle:function(file){
-        currentFile = file;
-      },
 
       getAllFiles: function(){
         return files;
@@ -52,8 +43,8 @@ angular.module('canvasApp')
       makeFile: function(fileData){
         var newFileId = makeId(files);
         var newFile = new File(newFileId, fileData);
-        console.log("newFile", newFile);
         files.push(newFile);
+
       }
     };
   });

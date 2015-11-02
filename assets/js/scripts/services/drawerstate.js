@@ -14,9 +14,37 @@ angular.module('canvasApp')
     var zoom = 1.0;
     var foregroundColor = '#ecd6ae';
     var backgroundColor = '#e3efd5';
+    var currentFileId = null;
+    var currentLayerId = null;
+    var currentObjectId = null;
+
 
     // Public API here
     return {
+
+      getCurrentFileId: function(){
+        return currentFileId;
+      },
+
+      setCurrentFileId: function(id){
+        currentFileId = id;
+      },
+
+      getCurrentObjectId: function(){
+        return currentObjectId;
+      },
+
+      setCurrentObjectId: function(id){
+        currentObjectId = id;
+      },
+
+      getCurrentLayerId: function(){
+        return currentLayerId;
+      },
+
+      setCurrentLayerId: function(id){
+        currentLayerId = id;
+      },
 
       getCurrentTool: function () {
         return currentTool;

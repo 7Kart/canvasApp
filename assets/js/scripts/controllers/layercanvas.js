@@ -12,10 +12,6 @@ angular.module('canvasApp')
 
       $scope.filesFactory = filesFactory;
 
-      $scope.$watch('filesFactory.getCurrentFile()', function(currrentFile){
-        $scope.currrentFile = currrentFile;
-      });
-
       $scope.openNewLayerModal = function () {
 
         var modalInstance = $uibModal.open({
