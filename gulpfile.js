@@ -51,6 +51,7 @@ gulp.task('js', function() {
 gulp.task('watch', function() {
 
     gulp.watch('./assets/*.less', ['less']);
+    gulp.watch('./assets/blocks/*.less', ['less']);
     gulp.watch('./assets/*/**.less', ['less']);
     gulp.watch('./assets/less/*/**.less', ['less']);
 

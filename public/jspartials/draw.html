@@ -1,13 +1,31 @@
 
 
-<div class="pull-left">
+<div class="page-cols__wrapper">
+    <div class="page-cols__content">
+
+        <div ng-include="'jspartials/draw_canvas.html'" class="canvas"></div>
+
+    </div>
+</div>
+
+<div class="page-cols__left">
+
     <div ng-include="'jspartials/draw_toolbox.html'"></div>
     <div ng-include="'jspartials/draw_colorbox.html'"></div>
+
+    <div class="clearfix"></div>
+
 </div>
 
-<div class="pull-right">
+<div class="page-cols__right">
+
     <div ng-include="'jspartials/draw_layers.html'"></div>
     <div ng-include="'jspartials/draw_info.html'"></div>
+
+    <div class="clearfix"></div>
+
 </div>
 
-<div ng-include="'jspartials/draw_canvas.html'" class="canvas"></div>
+
+
+
