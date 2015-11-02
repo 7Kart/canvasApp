@@ -10,15 +10,31 @@
 angular.module('canvasApp')
     .controller('DrawColorboxCtrl', ['$scope', 'DrawerState', function ($scope, DrawerState) {
 
+        $scope.frontColor = DrawerState.getForegroundColor();
+        $scope.backColor = DrawerState.getBackgroundColor();
+
         var getRandomHexColor = function() {
             return '#'+Math.floor(Math.random()*16777215).toString(16);
         };
 
         $scope.randomFrontColor = function() {
-            $scope.frontColor = getRandomHexColor();
+            DrawerState.setForegroundColor(getRandomHexColor());
         };
         $scope.randomBackColor = function() {
-            $scope.backColor = getRandomHexColor();
+            DrawerState.setBackgroundColor(getRandomHexColor());
+        };
+
+        $scope.getFrontColor = function() {
+            return DrawerState.getForegroundColor();
+        };
+        $scope.getBackColor = function() {
+            return DrawerState.getBackgroundColor();
+        };
+
+        $scope.swapColors = function() {
+            var tmp = DrawerState.getForegroundColor();
+            DrawerState.setForegroundColor(DrawerState.getBackgroundColor());
+            DrawerState.setBackgroundColor(tmp);
         };
 
     }]);

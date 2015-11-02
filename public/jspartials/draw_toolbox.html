@@ -1,16 +1,39 @@
 
 <ul class="toolbox" data-ng-controller="DrawToolboxCtrl">
     <li class="toolbox__title">Tools</li>
-    <li class="toolbox__tool" data-ng-click="setTool('pen')">
-        <i class="glyphicon glyphicon-pencil"></i>
+    <li
+        class="toolbox__tool toolbox__tool_circle"
+        data-ng-class="{toolbox__tool_active: 'circle' == currentTool}"
+        data-ng-click="setTool('circle')">
+        &nbsp;
     </li>
-    <li class="toolbox__tool">
-        <i class="glyphicon glyphicon-move" data-ng-click="setTool('move')"></i>
+    <li
+        class="toolbox__tool toolbox__tool_square"
+        data-ng-class="{toolbox__tool_active: 'square' == currentTool}"
+        data-ng-click="setTool('square')">
+        &nbsp;
     </li>
-    <li class="toolbox__tool">
-        <i class="glyphicon glyphicon-text-size" data-ng-click="setTool('text-size')"></i>
+    <li
+        class="toolbox__tool"
+        data-ng-class="{toolbox__tool_active: 'move' == currentTool}"
+        data-ng-click="setTool('move')">
+        <i class="glyphicon glyphicon-move"></i>
     </li>
-    <li class="toolbox__tool">
-        <i class="glyphicon glyphicon-fullscreen" data-ng-click="setTool('fullscreen')"></i>
+    <li
+        class="toolbox__tool"
+        data-ng-class="{toolbox__tool_active: 'zoom' == currentTool}"
+        data-ng-click="setTool('zoom')">
+        <i class="glyphicon glyphicon-search" data-ng-click="setTool('zoom')"></i>
+    </li>
+    <li class="toolbox__separator"></li>
+    <li
+        class="toolbox__tool"
+        data-ng-click="zoomIn">
+        <i class="glyphicon glyphicon-zoom-in" data-ng-click="zoomIn(); setTool(null)"></i>
+    </li>
+    <li
+        class="toolbox__tool"
+        data-ng-click="zoomOut">
+        <i class="glyphicon glyphicon-zoom-out" data-ng-click="zoomOut(); setTool(null)"></i>
     </li>
 </ul>

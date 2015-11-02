@@ -7,6 +7,12 @@
   .toolbox__title {
     text-align: center;
   }
+  .toolbox__separator {
+    border-top: 1px dashed #CCC;
+    height: 1px;
+    display: block;
+    margin: 5px;
+  }
   .toolbox__tool {
     list-style: none;
     border: 1px solid #CCC;
@@ -23,9 +29,19 @@
     border-radius: 3px;
 
     &:hover {
-      background: #EFEFEF;
+      background-color: #EFEFEF;
     }
   }
+    .toolbox__tool_circle {
+      background-image: url('/img/tools/circle.png');
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+    .toolbox__tool_square {
+      background-image: url('/img/tools/square.png');
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
     .toolbox__tool_active {
-      background: #EEE;
+      background-color: #EEE;
     }

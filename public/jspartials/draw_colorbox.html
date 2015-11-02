@@ -2,10 +2,11 @@
     <div class="colorbox__title">Colors</div>
     <div
         class="colorbox__color colorbox__color_front"
-        style="background: {{ frontColor }}"
+        style="background: {{ getFrontColor() }};"
         data-ng-click="randomFrontColor();"></div>
     <div
         class="colorbox__color colorbox__color_back"
-        style="background: {{ backColor }}"
+        style="background: {{ getBackColor() }};"
         data-ng-click="randomBackColor();"></div>
+    <div class="colorbox__swap" data-ng-click="swapColors()"></div>
 </div>
