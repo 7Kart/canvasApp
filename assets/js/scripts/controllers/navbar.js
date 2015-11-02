@@ -8,7 +8,7 @@
  * Controller of the canvasAppApp
  */
 angular.module('canvasApp')
-  .controller('NavbarCtrl', function ($scope, $uibModal) {
+  .controller('NavbarCtrl', function ($scope, $uibModal, filesFactory) {
 
       $scope.openNewFileModal = function (size) {
 
@@ -21,7 +21,7 @@ angular.module('canvasApp')
         });
 
         modalInstance.result.then(function (newFile) {
-          console.log("this.fileData",this.fileData);
+          filesFactory.makeFile(newFile);
         });
       };
 

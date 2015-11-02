@@ -5,9 +5,9 @@
  * @name canvasAppApp.filesFactory
  * @description
  * # filesFactory
- * Factory in the canvasAppApp.
+ * Factory in the canvasApp.
  */
-angular.module('canvasAppApp')
+angular.module('canvasApp')
   .factory('filesFactory', function () {
     // Service logic
     // ...

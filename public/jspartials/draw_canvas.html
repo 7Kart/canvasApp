@@ -1,10 +1,11 @@
-<div data-ng-controller="DrawCanvasCtrl">
 
-    <uib-tabset>
-        <uib-tab heading="Static title">Static content</uib-tab>
-        </uib-tab>
+<!--<div data-ng-controller="DrawCanvasCtrl">-->
+
+<div class="col-xs-12" ng-controller="DrawCanvasCtrl">
+
+    <uib-tabset ng-if="files.length>0">
+        <uib-tab justified="true" ng-repeat="file in files" heading="{{file.fileName}}">Static content</uib-tab>
     </uib-tabset>
 
-    {{ getCurrentTool() }}
 
 </div>
