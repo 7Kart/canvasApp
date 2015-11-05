@@ -1,11 +1,13 @@
 {
     "main.js": [
+        "./bower_components/underscore/underscore-min.js",
         "./bower_components/jquery/dist/jquery.js",
         "./bower_components/angular/angular.min.js",
         "./bower_components/bootstrap/dist/js/bootstrap.min.js",
         "./bower_components/angular-bootstrap/ui-bootstrap.min.js",
         "./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js",
-        "./bower_components/angular-ui-router/release/angular-ui-router.min.js",
+        "./bower_components/angular-ui-router/release/angular-ui-router.min.js",,
+        "./assets/js/scripts/services/_.js",
         "./assets/js/scripts/app.js",
         "./assets/js/scripts/controllers/navbar.js",
         "./assets/js/scripts/controllers/drawtoolbox.js",
@@ -15,6 +17,7 @@
         "./assets/js/scripts/controllers/layercanvas.js",
         "./assets/js/scripts/controllers/newlayermodal.js",
         "./assets/js/scripts/services/drawerstate.js",
+        "./assets/js/scripts/services/drawerutils.js",
         "./assets/js/scripts/services/filesfactory.js",
         "./assets/js/scripts/services/filesfactory.js"
     ]
