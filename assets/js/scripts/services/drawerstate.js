@@ -23,6 +23,7 @@ angular.module('canvasApp')
     return {
 
       getCurrentFileId: function(){
+        console.log("getCurrentFileId",currentFileId);
         return currentFileId;
       },
 

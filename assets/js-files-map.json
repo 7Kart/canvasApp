@@ -15,7 +15,7 @@
         "./assets/js/scripts/controllers/layercanvas.js",
         "./assets/js/scripts/controllers/newlayermodal.js",
         "./assets/js/scripts/services/drawerstate.js",
+        "./assets/js/scripts/services/filesfactory.js",
         "./assets/js/scripts/services/filesfactory.js"
-
     ]
 }

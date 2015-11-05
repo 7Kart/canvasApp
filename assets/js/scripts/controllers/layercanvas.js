@@ -8,11 +8,11 @@
  * Controller of the canvasAppApp
  */
 angular.module('canvasApp')
-    .controller('LayerCanvasCtrl',['$scope', 'filesFactory', "$uibModal", function($scope, filesFactory,  $uibModal){
+    .controller('LayerCanvasCtrl',['$scope','DrawerState', 'filesFactory', "$uibModal", function($scope, DrawerState, filesFactory,  $uibModal){
 
-      $scope.filesFactory = filesFactory;
+      $scope.getCurrentFileId = DrawerState.getCurrentFileId;
 
-      $scope.openNewLayerModal = function () {
+      $scope.openNewLayerModal = function (id) {
 
         var modalInstance = $uibModal.open({
           templateUrl: 'jspartials/modalWindow/fileModalWindow/newLayer.html',

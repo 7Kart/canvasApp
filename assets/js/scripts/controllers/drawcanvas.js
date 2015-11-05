@@ -12,16 +12,10 @@ angular.module('canvasApp')
 
       $scope.files = filesFactory.getAllFiles();
 
-      $scope.watchFilesFactory = filesFactory;
-        
-      $scope.$watch('watchFilesFactory.makeFile', function(){
-          console.log("file was made");
-      });  
-
       $scope.setCurrentFileId = DrawerState.setCurrentFileId;
 
       $scope.getCurrentTool = function() {
           return DrawerState.getCurrentTool();
       };
 
-  }])
+  }]);

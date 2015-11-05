@@ -4,7 +4,7 @@
 <div class="col-xs-12" ng-controller="DrawCanvasCtrl">
 
     <uib-tabset ng-if="files.length>0">
-        <uib-tab justified="true" ng-click="setCurrentFileId(file.id)" ng-repeat="file in files" heading="{{file.name}}">Static content</uib-tab>
+        <uib-tab justified="true"  ng-select="setCurrentFileId(file.id)" ng-repeat="file in files" heading="{{file.name}}">Static content</uib-tab>
     </uib-tabset>
 
     <div class="canvas__message" ng-if="files.length==0">
