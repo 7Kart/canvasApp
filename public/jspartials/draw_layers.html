@@ -14,7 +14,7 @@
             </ul>
         </li>
     </ul>
-    <ul ng-if="getCurrentFileId()" class="layers__actions">
+    <ul ng-if="getCurrentFileId()!=null" class="layers__actions">
         <li class="layer__action " ng-click="openNewLayerModal()">
             <i class="glyphicon glyphicon-plus"></i>
         </li>
