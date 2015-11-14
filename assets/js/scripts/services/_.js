@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc service
- * @name canvasApp.
+ * @name underscore.
  * @description
  * # 
- * Factory in the canvasApp.
+ * Factory in the underscore.
  */
-angular.module('underscore')
+angular.module('underscore', [])
   .factory('_', ['$window', function ($window) {
       return $window._;
   }]);

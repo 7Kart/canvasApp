@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc service
- * @name canvasAppApp.DrawerState
+ * @name canvasApp.DrawerState
  * @description
  * # DrawerState
  * Factory in the canvasAppApp.
@@ -17,7 +17,6 @@ angular.module('canvasApp')
     var currentFileId = null;
     var currentLayerId = null;
     var currentObjectId = null;
-
 
     // Public API here
     return {

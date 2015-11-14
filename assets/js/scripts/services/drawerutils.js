@@ -8,6 +8,6 @@
  * Service in the canvasApp.
  */
 angular.module('canvasApp')
-  .service('DrawerUtils', ["_", function DrawerUtils(_) {
+  .service('DrawerUtils', [function DrawerUtils() {
 
   }]);

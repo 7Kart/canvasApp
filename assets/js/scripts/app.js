@@ -2,8 +2,7 @@
 var canvasApp = angular.module('canvasApp', [
 	'ui.router',
 	'ui.bootstrap',
-	'ui.bootstrap.tpls',
-	'underscore'
+	'ui.bootstrap.tpls'
 ])
 	.config(function($stateProvider, $urlRouterProvider) {
 

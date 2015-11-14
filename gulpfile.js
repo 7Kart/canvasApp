@@ -61,6 +61,7 @@ gulp.task('watch', function() {
     gulp.watch('./assets/js/*/**.js', ['js']);
     gulp.watch('./assets/js/scripts/controllers/*.js', ['js']);
     gulp.watch('./assets/js/scripts/services/*.js', ['js']);
+    gulp.watch('./assets/js/scripts/directives/*.js', ['js']);
     gulp.watch('./assets/js-files-map.json', ['js']);
 
 });
