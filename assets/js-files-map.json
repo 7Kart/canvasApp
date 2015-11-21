@@ -19,7 +19,7 @@
         "./assets/js/scripts/services/drawerstate.js",
         "./assets/js/scripts/services/drawerutils.js",
         "./assets/js/scripts/services/filesfactory.js",
-        "./assets/js/scripts/services/filesfactory.js",
+        "./assets/js/scripts/services/drawershapesfactory.js",
         "./assets/js/scripts/directives/drawcanvas.js"
     ]
 }

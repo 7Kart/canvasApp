@@ -8,7 +8,17 @@
  * Factory in the canvasAppApp.
  */
 angular.module('canvasApp')
-  .factory('DrawerState', function () {
+  .factory('DrawerState', ['$rootScope', function ($rootScope) {
+
+    // @see /docs/shape_drawers.md
+    var DrawModifier = function() {
+      this.shiftX = 0;
+      this.shiftY = 0;
+      this.zoom = 1;
+      this.modifyCoordinate = function(val) {
+        return val * zoom;
+      };
+    };
 
     var currentTool = null;
     var zoom = 1.0;
@@ -17,12 +27,12 @@ angular.module('canvasApp')
     var currentFileId = null;
     var currentLayerId = null;
     var currentObjectId = null;
+    var drawViewModifier = new DrawModifier();
 
     // Public API here
     return {
 
       getCurrentFileId: function(){
-        console.log("getCurrentFileId",currentFileId);
         return currentFileId;
       },
 
@@ -57,29 +67,53 @@ angular.module('canvasApp')
         return zoom;
       },
       setZoom: function(newZoom) {
-        zoom = newZoom;
+        drawViewModifier.zoom = zoom = newZoom;
+        $rootScope.$broadcast('redrawCanvas');
       },
       incZoom: function(incZoom) {
         if (zoom + incZoom > 0 && zoom + incZoom < 2) {
           zoom += incZoom;
           zoom = parseInt(zoom * 100) / 100;
+          drawViewModifier.zoom = zoom;
+          $rootScope.$broadcast('redrawCanvas');
         }
         return zoom;
       },
 
+      getShiftX: function() {
+        return shiftX;
+      },
+      setShiftX: function(newShift) {
+        drawViewModifier.shiftX = shiftX = newShift;
+        $rootScope.$broadcast('redrawCanvas');
+      },
+
+      getShiftY: function() {
+        return shiftY;
+      },
+      setShiftY: function(newShift) {
+        drawViewModifier.shiftY = shiftY = newShift;
+        $rootScope.$broadcast('redrawCanvas');
+      },
+
       setForegroundColor: function(color) {
         foregroundColor = color;
+        $rootScope.$broadcast('redrawCanvas');
       },
       getForegroundColor: function() {
         return foregroundColor;
       },
       setBackgroundColor: function(color) {
         backgroundColor = color;
+        $rootScope.$broadcast('redrawCanvas');
       },
       getBackgroundColor: function() {
         return backgroundColor;
       },
 
+      getDrawViewModifier: function() {
+        return drawViewModifier;
+      },
 
     };
-  });
+  }]);
