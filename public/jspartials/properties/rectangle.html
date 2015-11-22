@@ -1,0 +1,51 @@
+
+<div class="form-inline">
+    <div class="form-group">
+        <label for="param_rect_x">x</label>
+        <input type="number"
+               class="form-control"
+               id="param_rect_x"
+               data-ng-model="getCurrentShape().x"
+               data-ng-change="firePropertyModified()" />
+    </div>
+    <div class="form-group">
+        <label for="param_rect_y">y</label>
+        <input type="number"
+               class="form-control"
+               id="param_rect_y"
+               data-ng-model="getCurrentShape().y"
+               data-ng-change="firePropertyModified()" />
+    </div>
+    <div class="form-group">
+        <label for="param_rect_width">width</label>
+        <input type="number"
+               class="form-control"
+               id="param_rect_width"
+               data-ng-model="getCurrentShape().width"
+               data-ng-change="firePropertyModified()" />
+    </div>
+    <div class="form-group">
+        <label for="param_rect_height">height</label>
+        <input type="number"
+               class="form-control"
+               id="param_rect_height"
+               data-ng-model="getCurrentShape().height"
+               data-ng-change="firePropertyModified()" />
+    </div>
+    <div class="form-group">
+        <label for="param_rect_color">color</label>
+        <input type="text"
+               class="form-control"
+               id="param_rect_color"
+               data-ng-model="getCurrentShape().color"
+               data-ng-change="firePropertyModified()" />
+    </div>
+    <div class="form-group">
+        <label for="param_rect_color">bg color</label>
+        <input type="text"
+               class="form-control"
+               id="param_rect_bg_color"
+               data-ng-model="getCurrentShape().bgColor"
+               data-ng-change="firePropertyModified()" />
+    </div>
+</div>

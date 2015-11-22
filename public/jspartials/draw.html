@@ -1,6 +1,6 @@
 
 
-<div class="page-cols__wrapper">
+<div class="page-cols__wrapper unselectable">
     <div class="page-cols__content">
 
         <div ng-include="'jspartials/draw_canvas.html'" class="canvas"></div>
@@ -8,7 +8,7 @@
     </div>
 </div>
 
-<div class="page-cols__left">
+<div class="page-cols__left unselectable">
 
     <div ng-include="'jspartials/draw_toolbox.html'"></div>
     <div ng-include="'jspartials/draw_colorbox.html'"></div>
@@ -17,10 +17,11 @@
 
 </div>
 
-<div class="page-cols__right">
+<div class="page-cols__right unselectable">
 
     <div ng-include="'jspartials/draw_layers.html'"></div>
     <div ng-include="'jspartials/draw_info.html'"></div>
+    <div ng-include="'jspartials/draw_properties.html'"></div>
 
     <div class="clearfix"></div>
 

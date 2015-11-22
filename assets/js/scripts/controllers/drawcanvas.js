@@ -8,7 +8,7 @@
  * Controller of the canvasAppApp
  */
 angular.module('canvasApp')
-  .controller('DrawCanvasCtrl', ['$scope', 'filesFactory', 'DrawerState',  function ($scope, filesFactory, DrawerState) {
+  .controller('DrawCanvasCtrl', ['$scope', '$rootScope', 'filesFactory', 'DrawerState',  function ($scope, $rootScope, filesFactory, DrawerState) {
 
       $scope.files = filesFactory.getAllFiles();
 
@@ -18,4 +18,4 @@ angular.module('canvasApp')
           return DrawerState.getCurrentTool();
       };
 
-  }]);
+    }]);

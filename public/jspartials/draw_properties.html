@@ -1,0 +1,15 @@
+<div data-ng-controller="DrawPropertiesCtrl" data-ng-show="shapes.length > 0">
+
+    <hr>
+
+    <strong>Properties (Shape: {{ currentShapeIndex + 1 }}; Total: {{ shapes.length }})</strong>
+
+    <div class="btn-group pull-right">
+        <a href="" class="btn btn-info btn-xs" data-ng-click="nextShape()">Next</a>
+        <a href="" class="btn btn-info btn-xs" data-ng-click="prevShape()">Prev</a>
+    </div>
+
+    <div ng-include="'jspartials/properties/line.html'" ng-show="'line' == getCurrentShapeType()"></div>
+    <div ng-include="'jspartials/properties/rectangle.html'" ng-show="'rectangle' == getCurrentShapeType()"></div>
+
+</div>

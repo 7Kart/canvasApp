@@ -15,7 +15,13 @@ angular.module('canvasApp')
       this.shiftX = 0;
       this.shiftY = 0;
       this.zoom = 1;
-      this.modifyCoordinate = function(val) {
+      this.modifyXCoordinate = function(val) {
+        return (val + this.shiftX) * this.zoom;
+      };
+      this.modifyYCoordinate = function(val) {
+        return (val + this.shiftY) * this.zoom;
+      };
+      this.modifyMetric = function(val) {
         return val * zoom;
       };
     };
@@ -28,6 +34,8 @@ angular.module('canvasApp')
     var currentLayerId = null;
     var currentObjectId = null;
     var drawViewModifier = new DrawModifier();
+    var shiftX = 0;
+    var shiftY = 0;
 
     // Public API here
     return {

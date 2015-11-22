@@ -2,15 +2,15 @@
 <ul class="toolbox" data-ng-controller="DrawToolboxCtrl">
     <li class="toolbox__title">Tools</li>
     <li
-        class="toolbox__tool toolbox__tool_circle"
-        data-ng-class="{toolbox__tool_active: 'circle' == currentTool}"
-        data-ng-click="setTool('circle')">
-        &nbsp;
+        class="toolbox__tool"
+        data-ng-class="{toolbox__tool_active: 'line' == currentTool}"
+        data-ng-click="setTool('line')">
+        <i class="glyphicon glyphicon-pencil"></i>
     </li>
     <li
         class="toolbox__tool toolbox__tool_square"
-        data-ng-class="{toolbox__tool_active: 'square' == currentTool}"
-        data-ng-click="setTool('square')">
+        data-ng-class="{toolbox__tool_active: 'rectangle' == currentTool}"
+        data-ng-click="setTool('rectangle')">
         &nbsp;
     </li>
     <li
@@ -35,5 +35,26 @@
         class="toolbox__tool"
         data-ng-click="zoomOut">
         <i class="glyphicon glyphicon-zoom-out" data-ng-click="zoomOut(); setTool(null)"></i>
+    </li>
+    <li class="toolbox__separator"></li>
+    <li
+        class="toolbox__tool"
+        data-ng-click="zoomOut">
+        <i class="glyphicon glyphicon-arrow-up" data-ng-click="shiftUp(); setTool(null)"></i>
+    </li>
+    <li
+        class="toolbox__tool"
+        data-ng-click="zoomOut">
+        <i class="glyphicon glyphicon-arrow-down" data-ng-click="shiftDown(); setTool(null)"></i>
+    </li>
+    <li
+        class="toolbox__tool"
+        data-ng-click="zoomOut">
+        <i class="glyphicon glyphicon-arrow-left" data-ng-click="shiftLeft(); setTool(null)"></i>
+    </li>
+    <li
+        class="toolbox__tool"
+        data-ng-click="zoomOut">
+        <i class="glyphicon glyphicon-arrow-right" data-ng-click="shiftRight(); setTool(null)"></i>
     </li>
 </ul>

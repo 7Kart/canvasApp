@@ -25,4 +25,17 @@ angular.module('canvasApp')
             DrawerState.incZoom(-0.05);
         };
 
+        $scope.shiftUp = function() {
+            DrawerState.setShiftY(DrawerState.getShiftY() - 10);
+        };
+        $scope.shiftDown = function() {
+            DrawerState.setShiftY(DrawerState.getShiftY() + 10);
+        };
+        $scope.shiftLeft = function() {
+            DrawerState.setShiftX(DrawerState.getShiftX() - 10);
+        };
+        $scope.shiftRight = function() {
+            DrawerState.setShiftX(DrawerState.getShiftX() + 10);
+        };
+
   }]);

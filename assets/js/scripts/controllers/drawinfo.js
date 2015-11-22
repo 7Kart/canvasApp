@@ -25,8 +25,17 @@ angular.module('canvasApp')
             return DrawerState.getBackgroundColor();
         };
 
+        $scope.getShiftX = function() {
+            return DrawerState.getShiftX();
+        };
+        $scope.getShiftY = function() {
+            return DrawerState.getShiftY();
+        };
+
         $scope.getFilesCount = function() {
             return FilesFactory.getAllFiles().length;
         };
+
+
 
     }]);

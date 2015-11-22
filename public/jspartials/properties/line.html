@@ -1,0 +1,43 @@
+
+<div class="form-inline">
+    <div class="form-group">
+        <label for="param_line_x1">x1</label>
+        <input type="number"
+               class="form-control"
+               id="param_line_x1"
+               data-ng-model="getCurrentShape().x1"
+               data-ng-change="firePropertyModified();" />
+    </div>
+    <div class="form-group">
+        <label for="param_line_y1">y1</label>
+        <input type="number"
+               class="form-control"
+               id="param_line_y1"
+               data-ng-model="getCurrentShape().y1"
+               data-ng-change="firePropertyModified()" />
+    </div>
+    <div class="form-group">
+        <label for="param_line_x2">x2</label>
+        <input type="number"
+               class="form-control"
+               id="param_line_x2"
+               data-ng-model="getCurrentShape().x2"
+               data-ng-change="firePropertyModified()" />
+    </div>
+    <div class="form-group">
+        <label for="param_line_y2">y2</label>
+        <input type="number"
+               class="form-control"
+               id="param_line_y2"
+               data-ng-model="getCurrentShape().y2"
+               data-ng-change="firePropertyModified()" />
+    </div>
+    <div class="form-group">
+        <label for="param_line_color">color</label>
+        <input type="text"
+               class="form-control"
+               id="param_line_color"
+               data-ng-model="getCurrentShape().color"
+               data-ng-change="firePropertyModified()" />
+    </div>
+</div>
