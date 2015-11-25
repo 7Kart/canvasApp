@@ -33,6 +33,14 @@
                data-ng-change="firePropertyModified()" />
     </div>
     <div class="form-group">
+        <label for="param_line_width">Line Width</label>
+        <input type="text"
+               class="form-control"
+               id="param_line_width"
+               data-ng-model="getCurrentShape().borderWidth"
+               data-ng-change="firePropertyModified()" />
+    </div>
+    <div class="form-group">
         <label for="param_rect_color">color</label>
         <input type="text"
                class="form-control"

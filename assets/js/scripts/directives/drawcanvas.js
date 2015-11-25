@@ -21,9 +21,9 @@ angular.module('canvasApp')
                     ctx.clearRect(0, 0, 1000, 1000);
 
                     // draw center of coordinates
-                    DrawerShapesFactory.createLine({x1: -10, y1: 0, x2: 10, y2: 0, color: '#CCC'})
+                    DrawerShapesFactory.createLine({x1: -10, y1: 0, x2: 10, y2: 0, color: '#CCC', lineWidth: 1})
                         .draw(ctx, DrawerState.getDrawViewModifier(), getBasePoint());
-                    DrawerShapesFactory.createLine({x1: 0, y1: -10, x2: 0, y2: 10, color: '#CCC'})
+                    DrawerShapesFactory.createLine({x1: 0, y1: -10, x2: 0, y2: 10, color: '#CCC', lineWidth: 1})
                         .draw(ctx, DrawerState.getDrawViewModifier(), getBasePoint());
 
                     // draw shapes
