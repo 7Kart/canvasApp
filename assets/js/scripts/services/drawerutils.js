@@ -38,6 +38,7 @@ angular.module('canvasApp')
                 y: 0,
                 height: 0,
                 width: 0,
+                borderWidth: 1,
                 color: DrawerState.getForegroundColor(),
                 bgColor: DrawerState.getBackgroundColor()
             });
@@ -50,6 +51,7 @@ angular.module('canvasApp')
                 y1: 0,
                 x2: 0,
                 y2: 0,
+                borderWidth: 1,
                 color: DrawerState.getForegroundColor()
             });
             return shape;

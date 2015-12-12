@@ -18,6 +18,7 @@ angular.module('canvasApp')
             this.height = info.height;
             this.color = info.color;
             this.bgColor = info.bgColor;
+            this.borderWidth = info.borderWidth;
 
             this.draw = function(domCtx, drawModifier, basePoint) {
                 domCtx.fillStyle = this.bgColor;
@@ -31,14 +32,9 @@ angular.module('canvasApp')
                     width,
                     height
                 );
-                domCtx.beginPath();
-                domCtx.moveTo(x, y);
-                domCtx.lineTo(x + width, y);
-                domCtx.lineTo(x + width, y + height);
-                domCtx.lineTo(x, y + height);
-                domCtx.lineTo(x, y);
+                domCtx.lineWidth = this.borderWidth;
                 domCtx.strokeStyle = this.color;
-                domCtx.stroke();
+                domCtx.strokeRect(x, y, width, height);
             };
 
             this.setCoordByMouseMove = function(x1, y1, x2, y2) {
@@ -56,6 +52,7 @@ angular.module('canvasApp')
             this.x2 = info.x2;
             this.y2 = info.y2;
             this.color = info.color;
+            this.lineWidth = info.lineWidth;
             this.draw = function(domCtx, drawModifier, basePoint) {
                 domCtx.beginPath();
                 domCtx.moveTo(
@@ -66,6 +63,7 @@ angular.module('canvasApp')
                     drawModifier.modifyXCoordinate(this.x2) + basePoint.x,
                     drawModifier.modifyYCoordinate(this.y2) + basePoint.y
                 );
+                domCtx.lineWidth = this.lineWidth;
                 domCtx.strokeStyle = this.color;
                 domCtx.stroke();
             };

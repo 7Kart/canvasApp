@@ -12,7 +12,7 @@ angular.module('canvasApp')
 
         $scope.currentShapeIndex = -1;
         $scope.shapes = [];
-        DrawerUtils.onChangeShapes(function(shapes){
+        DrawerUtils.onChangeShapes(function(){
             $scope.$apply(function(){
                 $scope.shapes = DrawerUtils.getShapes();
                 $scope.currentShapeIndex = $scope.shapes.length - 1;
