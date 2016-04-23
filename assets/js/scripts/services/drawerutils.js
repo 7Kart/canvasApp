@@ -8,7 +8,9 @@
  * Service in the canvasApp.
  */
 angular.module('canvasApp')
+
     .service('DrawerUtils', ['DrawerShapesFactory', 'DrawerState', '$rootScope', 'layersFactory', 'filesFactory', function (DrawerShapesFactory, DrawerState, $rootScope, layersFactory, filesFactory) {
+
 
         //
         //  This is temp implementation, need to move this to files/layers later
@@ -84,6 +86,17 @@ angular.module('canvasApp')
               layer.shapes.push(shape);
               fireChangedShapes(layer);
             });
+        };
+
+        this.deleteObject = function(shape) {
+            for (var i in this.shapes) {
+                if (this.shapes[i] === shape) {
+                    this.shapes.splice(i, 1);
+                    $rootScope.$broadcast('redrawCanvas');
+                    break;
+                }
+            }
+            console.log(this.shapes);
         };
 
     }]);

@@ -12,6 +12,7 @@ angular.module('canvasApp')
 
         $scope.currentShapeIndex = -1;
         $scope.shapes = [];
+// <<<<<<< HEAD
         $scope.currentLayer = null;
 
         // DrawerState.getCurrentFileId();
@@ -23,6 +24,16 @@ angular.module('canvasApp')
         //         $scope.currentShapeIndex = $scope.shapes.length - 1;
         //     });
         // });
+// =======
+        var updateShapes = function() {
+            DrawerUtils.onChangeShapes(function(){
+                $scope.$apply(function(){
+                    $scope.shapes = DrawerUtils.getShapes();
+                    $scope.currentShapeIndex = $scope.shapes.length - 1;
+                });
+            });
+            // >>>>>>> c027095c03a767a3750e7c499df222c65ac4c5aa
+        };
 
         $scope.nextShape = function() {
             $scope.currentShapeIndex += 1;
@@ -48,6 +59,14 @@ angular.module('canvasApp')
             }
         };
 
+        $scope.deleteCurrentObject = function() {
+            DrawerUtils.deleteObject($scope.shapes[$scope.currentShapeIndex]);
+            if ($scope.currentShapeIndex <= $scope.shapes.length) {
+                $scope.currentShapeIndex = $scope.shapes.length - 1;
+            }
+            updateShapes();
+        };
+
         $scope.firePropertyModified = function() {
             $rootScope.$broadcast('redrawCanvas');
         };
@@ -59,5 +78,7 @@ angular.module('canvasApp')
                 return null;
             }
         };
+
+        updateShapes();
 
     }]);
