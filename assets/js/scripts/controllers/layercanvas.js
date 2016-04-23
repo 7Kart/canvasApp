@@ -8,22 +8,44 @@
  * Controller of the canvasAppApp
  */
 angular.module('canvasApp')
-    .controller('LayerCanvasCtrl',['$scope','DrawerState', 'filesFactory', "$uibModal", function($scope, DrawerState, filesFactory,  $uibModal){
+    .controller('LayerCanvasCtrl',['$scope','DrawerState', 'filesFactory', "layersFactory", "$uibModal","interfaceServ", function($scope, DrawerState, filesFactory, layersFactory, $uibModal, interfaceServ){
+
+      $scope.activeLayer = interfaceServ.activeLayer;
 
       $scope.getCurrentFileId = DrawerState.getCurrentFileId;
 
-      $scope.openNewLayerModal = function (id) {
+      $scope.getCurrentFile = filesFactory.getFileById;
 
-        var modalInstance = $uibModal.open({
+      $scope.setCurrentLayerId = DrawerState.setCurrentLayerId;
+
+      $scope.deleteLayer = filesFactory.deleteLayer;
+
+      $scope.selectedLayerIndex = 0;
+
+      $scope.chooseLayer =  function(layerIndex, layerId){
+        $scope.selectedLayerIndex = layerIndex;
+        DrawerState.setCurrentLayerId(layerId);
+      }
+
+      $scope.openNewLayerModal = function (fileID) {
+
+      var modalInstance = $uibModal.open({
           templateUrl: 'jspartials/modalWindow/fileModalWindow/newLayer.html',
           controller:"NewlayermodalCtrl",
           resolve: {
-
+            data:function(){
+              return {
+                fileID:fileID
+              }
+            }
           }
         });
 
         modalInstance.result.then(function (newLayer) {
-          console.log("newLayer", newLayer);
+          var currentFile = filesFactory.getFileById(fileID);
+          var newLayer = layersFactory.makeLayer(currentFile.layers, newLayer)
+          currentFile.addLayers(newLayer);
+          console.log("currentFile", currentFile);
         });
       };
     }])

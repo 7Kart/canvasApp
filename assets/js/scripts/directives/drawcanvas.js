@@ -7,9 +7,13 @@
  * # DrawCanvas
  */
 angular.module('canvasApp')
-    .directive('drawCanvas', ['DrawerUtils', 'DrawerState', 'DrawerShapesFactory', function (DrawerUtils, DrawerState, DrawerShapesFactory) {
+    .directive('drawCanvas', ['DrawerUtils', 'DrawerState', 'DrawerShapesFactory', 'layersFactory', 'filesFactory', function (DrawerUtils, DrawerState, DrawerShapesFactory, layersFactory, filesFactory) {
         return {
             restrict: 'A',
+            scope:{
+              currentFile: "=currentFile",
+              currentLayerId: "=currentLayerId"
+            },
             link: function postLink($scope, element, attrs) {
 
                 var getBasePoint = function() {
@@ -18,17 +22,20 @@ angular.module('canvasApp')
 
                 var redrawCanvas = function () {
                     var ctx = element[0].getContext("2d");
+
                     ctx.clearRect(0, 0, 1000, 1000);
 
                     // draw center of coordinates
-                    DrawerShapesFactory.createLine({x1: -10, y1: 0, x2: 10, y2: 0, color: '#CCC', lineWidth: 1})
-                        .draw(ctx, DrawerState.getDrawViewModifier(), getBasePoint());
-                    DrawerShapesFactory.createLine({x1: 0, y1: -10, x2: 0, y2: 10, color: '#CCC', lineWidth: 1})
-                        .draw(ctx, DrawerState.getDrawViewModifier(), getBasePoint());
+                    // DrawerShapesFactory.createLine({x1: -10, y1: 0, x2: 10, y2: 0, color: '#CCC', lineWidth: 1})
+                    //     .draw(ctx, DrawerState.getDrawViewModifier(), getBasePoint());
+                    // DrawerShapesFactory.createLine({x1: 0, y1: -10, x2: 0, y2: 10, color: '#CCC', lineWidth: 1})
+                    //     .draw(ctx, DrawerState.getDrawViewModifier(), getBasePoint());
 
                     // draw shapes
-                    var shapes = DrawerUtils.getShapes();
-                    for (var i in DrawerUtils.getShapes()) {
+                    var shapes = DrawerUtils.getShapes($scope.currentFile);
+                    // var shapes = DrawerUtils.getShapes();
+                    for (var i in DrawerUtils.getShapes($scope.currentFile)) {
+                    // for (var i in DrawerUtils.getShapes()) {
                         shapes[i].draw(ctx, DrawerState.getDrawViewModifier(), getBasePoint());
                     }
 
@@ -74,9 +81,19 @@ angular.module('canvasApp')
                     }
                 });
 
+                element.bind("click", function(e){
+                  if('move' == DrawerState.getCurrentTool(e)){
+                    var shapes = DrawerUtils.getShapes($scope.currentFile);
+                    shapes.forEach(function(shape){
+                      shape.getShapeEquation();
+                    });
+                  };
+                });
+
                 element.bind('mouseup', function (e) {
                     if (mouseNewObject) {
-                        DrawerUtils.addShape(mouseNewObject);
+                      // DrawerUtils.addShape(mouseNewObject);
+                        DrawerUtils.addShape(mouseNewObject, layersFactory.getLayerById($scope.currentFile,$scope.currentLayerId));
                     }
                     mousePressed = false;
                     mouseNewObject = null;

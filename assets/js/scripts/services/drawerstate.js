@@ -91,6 +91,7 @@ angular.module('canvasApp')
       getShiftX: function() {
         return shiftX;
       },
+
       setShiftX: function(newShift) {
         drawViewModifier.shiftX = shiftX = newShift;
         $rootScope.$broadcast('redrawCanvas');

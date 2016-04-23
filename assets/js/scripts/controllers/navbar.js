@@ -27,9 +27,11 @@ angular.module('canvasApp')
 
   })
 
-  .controller("newFileModalController", function($scope, $uibModalInstance){
+  .controller("newFileModalController", function($scope, $uibModalInstance, filesFactory){
     $scope.newFileSubmit = newFileSubmit;
     $scope.cancel = cancel;
+
+    $scope.makeDefaultFileName = filesFactory.makeDefaultFileName;
 
     function newFileSubmit(){
       $uibModalInstance.close(this.fileData);
@@ -40,4 +42,3 @@ angular.module('canvasApp')
     }
 
   });
-

@@ -8,9 +8,9 @@
  * Controller of the canvasAppApp
  */
 angular.module('canvasApp')
-  .controller('NewlayermodalCtrl', function ($scope, $uibModalInstance) {
+  .controller('NewlayermodalCtrl', function ($scope, $uibModalInstance, data) {
       $scope.newLayerSubmit = newLayerSubmit;
-      $scope.cancel = cancel;
+      $scope.cancel = cancel;      
 
       function newLayerSubmit(){
         $uibModalInstance.close(this.newLayerData);

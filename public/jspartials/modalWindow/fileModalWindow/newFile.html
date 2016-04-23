@@ -6,16 +6,16 @@
             <div class="modal-body text-center">
                 <div>
                     <label class="file__label">File's name</label>
-                    <input name="fileName" ng-model="fileData.fileName" required/>
+                    <input name="fileName" ng-model="fileData.fileName" ng-init="fileData.fileName=makeDefaultFileName()" required/>
                 </div>
                 <span class="alert alert-danger" ng-show="newFile.fileName.$dirty && newFile.fileName.$error.required">File's  name can't be empty</span>
                 <div>
                     <label class="file__label">Width</label>
-                    <input type="number" name="fileWidth" ng-model="fileData.fileWidth"/>
+                    <input type="number" name="fileWidth" ng-init="fileData.fileWidth=300" ng-model="fileData.fileWidth"/>
                 </div>
                 <div>
                     <label class="file__label">Height</label>
-                    <input type="number" name="fileHeight" ng-model="fileData.fileHeight"/>
+                    <input type="number" name="fileHeight" ng-init="fileData.fileHeight=300" ng-model="fileData.fileHeight"/>
                 </div>
             </div>
         <div class="modal-footer">

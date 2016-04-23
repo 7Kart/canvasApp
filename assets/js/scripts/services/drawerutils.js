@@ -8,7 +8,7 @@
  * Service in the canvasApp.
  */
 angular.module('canvasApp')
-    .service('DrawerUtils', ['DrawerShapesFactory', 'DrawerState', function (DrawerShapesFactory, DrawerState) {
+    .service('DrawerUtils', ['DrawerShapesFactory', 'DrawerState', '$rootScope', 'layersFactory', 'filesFactory', function (DrawerShapesFactory, DrawerState, $rootScope, layersFactory, filesFactory) {
 
         //
         //  This is temp implementation, need to move this to files/layers later
@@ -18,18 +18,38 @@ angular.module('canvasApp')
 
         this.shapes = [];
 
-        this.onChangeShapesCallbacks = [];
-        this.onChangeShapes = function (callback) {
-            that.onChangeShapesCallbacks.push(callback);
+        this.makeId = function(array){
+          var id =  array.length;
+          for(var ell=0; ell<array.length; ell++){
+            if(id==array[ell].id){
+              ell = 0;
+              id++;
+            }
+          }
+          return id;
         };
-        var fireChangedShapes = function() {
-            for (var i in that.onChangeShapesCallbacks) {
-                that.onChangeShapesCallbacks[i](that.shapes);
+
+        this.onChangeShapesCallbacks = [];
+
+        this.onChangeShapes = function(callback, layer){
+          layer.onChangeShapesCallbacks.push(callback);
+        }
+
+        var fireChangedShapes = function(layer) {
+            for (var i in layer.onChangeShapesCallbacks) {
+                layer.onChangeShapesCallbacks[i](layer.shapes);
             }
         };
 
-        this.getShapes = function () {
-            return that.shapes;
+        this.getShapes = function (layers) {
+
+          var shapes = [];
+          layers.filter(function(layer){
+            return layer.visible == true;
+          }).forEach(function(layer){
+              shapes = shapes.concat(layer.shapes);
+          });
+          return shapes;
         };
 
         this.newRectangle = function () {
@@ -40,7 +60,8 @@ angular.module('canvasApp')
                 width: 0,
                 borderWidth: 1,
                 color: DrawerState.getForegroundColor(),
-                bgColor: DrawerState.getBackgroundColor()
+                bgColor: DrawerState.getBackgroundColor(),
+                layer: layersFactory.getLayerById(filesFactory.getFilesLayers(DrawerState.getCurrentFileId()) ,DrawerState.getCurrentLayerId())
             });
             return shape;
         };
@@ -52,14 +73,17 @@ angular.module('canvasApp')
                 x2: 0,
                 y2: 0,
                 borderWidth: 1,
-                color: DrawerState.getForegroundColor()
+                color: DrawerState.getForegroundColor(),
+                layer: layersFactory.getLayerById(filesFactory.getFilesLayers(DrawerState.getCurrentFileId()) ,DrawerState.getCurrentLayerId())
             });
             return shape;
         };
 
-        this.addShape = function(shape) {
-            this.shapes.push(shape);
-            fireChangedShapes();
+        this.addShape = function(shape, layer) {
+            $rootScope.$apply(function(){
+              layer.shapes.push(shape);
+              fireChangedShapes(layer);
+            });
         };
 
     }]);

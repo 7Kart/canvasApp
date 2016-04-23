@@ -8,16 +8,21 @@
  * Controller of the canvasAppApp
  */
 angular.module('canvasApp')
-    .controller('DrawPropertiesCtrl', ['$scope', '$rootScope', 'DrawerUtils', function ($scope, $rootScope, DrawerUtils) {
+    .controller('DrawPropertiesCtrl', ['$scope', '$rootScope', 'DrawerUtils','filesFactory', 'DrawerState', 'layersFactory', function ($scope, $rootScope, DrawerUtils, filesFactory, DrawerState, layersFactory) {
 
         $scope.currentShapeIndex = -1;
         $scope.shapes = [];
-        DrawerUtils.onChangeShapes(function(){
-            $scope.$apply(function(){
-                $scope.shapes = DrawerUtils.getShapes();
-                $scope.currentShapeIndex = $scope.shapes.length - 1;
-            });
-        });
+        $scope.currentLayer = null;
+
+        // DrawerState.getCurrentFileId();
+        // DrawerState.getCurrentLayerId();
+        // $scope.currentFile = filesFactory.getFileById(DrawerState.getCurrentFileId());
+        // DrawerUtils.onChangeShapes(function(){
+        //     $scope.$apply(function(){
+        //         $scope.shapes = DrawerUtils.getShapes();
+        //         $scope.currentShapeIndex = $scope.shapes.length - 1;
+        //     });
+        // });
 
         $scope.nextShape = function() {
             $scope.currentShapeIndex += 1;

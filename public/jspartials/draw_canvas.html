@@ -1,15 +1,19 @@
 
 <!--<div data-ng-controller="DrawCanvasCtrl">-->
 
+
 <div class="col-xs-12" ng-controller="DrawCanvasCtrl">
 
-    <uib-tabset ng-if="files.length>0">
-        <uib-tab
-            justified="true"
-            ng-select="setCurrentFileId(file.id)"
-            ng-repeat="file in files"
-            heading="{{file.name}}">
+    <!-- <div ng-include="'jspartials/draw_timeLine.html'" ng-if="files.length>0"></div> -->
 
+    <uib-tabset ng-if="files.length>0">
+        <uib-tab justified="true" active="makeActiveTab(file.id, getCurrentFileId())" ng-click="setCurrentFileId(file.id)" ng-repeat="file in files">
+            <uib-tab-heading>
+              {{file.name}} <i ng-click="deleteFile(file.id)" class='glyphicon glyphicon-remove'> </i>
+            </uib-tab-heading>
+            <div class="file-tab-content" style="width:{{file.width+30+'px'}}; height:{{file.height+30+'px'}}">
+              <canvas draw-canvas current-layer-id="getCurrentLayerId()" current-file="getFilesLayers(getCurrentFileId())" width="{{file.width}}" height="{{file.height}}"> </canvas>
+            </div>
         </uib-tab>
     </uib-tabset>
 
@@ -19,6 +23,6 @@
     </div>
 
     <!-- this should be moved to tab later -->
-    <canvas draw-canvas="" width="300" height="300"></canvas>
+    <!-- <canvas draw-canvas="" width="300" height="300"></canvas> -->
 
 </div>

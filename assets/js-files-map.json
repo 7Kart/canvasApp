@@ -1,5 +1,5 @@
-{
-    "main.js": [
+
+{    "main.js": [
         "./bower_components/underscore/underscore-min.js",
         "./bower_components/jquery/dist/jquery.js",
         "./bower_components/angular/angular.min.js",
@@ -17,10 +17,16 @@
         "./assets/js/scripts/controllers/layercanvas.js",
         "./assets/js/scripts/controllers/newlayermodal.js",
         "./assets/js/scripts/controllers/drawproperties.js",
+        "./assets/js/scripts/controllers/timeline.js",
         "./assets/js/scripts/services/drawerstate.js",
         "./assets/js/scripts/services/drawerutils.js",
         "./assets/js/scripts/services/filesfactory.js",
+        "./assets/js/scripts/services/layersfactory.js",
         "./assets/js/scripts/services/drawershapesfactory.js",
-        "./assets/js/scripts/directives/drawcanvas.js"
+        "./assets/js/scripts/directives/drawcanvas.js",
+        "./assets/js/scripts/services/interfaceServ.js",
+        "./assets/js/scripts/services/geometryServ.js",
+        "./assets/js/scripts/services/timeLineService.js",
+        "./assets/js/scripts/directives/timeline.js"
     ]
 }

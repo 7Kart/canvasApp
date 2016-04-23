@@ -1,0 +1,18 @@
+<table >
+  <thead class="time_line_head">
+    <tr >
+      <th class="shape_name"> shapes' names </th>
+      <th id="{{$index}}" class="cadr_numeral ng-class:{'active_cell_head': $index == file.getCUrrentTime() }; " ng-click="file.setCurrentTime($index)" ng-repeat="second in makeNumberArray(timeRange) track by $index">
+         {{$index+1}}
+      </th>
+    </tr>
+  </thead>
+  <tbody class="layer_line_timeline" ng-repeat="layer in file.layers">
+    <tr ng-repeat="shape in layer.shapes">
+      <td class="shape_name">{{shape.customName}}</td>
+      <td class="cadr_numeral ng-class:{'active_cell': $index == file.currentTime };" ng-repeat="second in makeNumberArray(timeRange) track by $index">
+
+      </td>
+    </tr>
+  </tbody>
+</table>

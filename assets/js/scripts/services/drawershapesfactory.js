@@ -8,10 +8,27 @@
  * Factory in the canvasAppApp.
  */
 angular.module('canvasApp')
-    .factory('DrawerShapesFactory', function () {
+    .factory('DrawerShapesFactory', function ( geometryServ) {
+
+        var SuperShape = {
+          makeId: function(layer){
+            var id = layer.shapes.length;
+            for(var ell=0; ell<layer.shapes.length; ell++){
+              if(layer.shapes[ell].id == id){
+                ell = 0;
+                id++
+              }
+            }
+            return id+"_"+layer.id;
+          },
+
+
+        }
 
         var RectangleShape = function(info) {
+            this.id = this.makeId(info.layer);
             this.type = 'rectangle';
+            this.customName = "new "+this.type+" "+this.id;
             this.x = info.x;
             this.y = info.y;
             this.width = info.width;
@@ -37,16 +54,33 @@ angular.module('canvasApp')
                 domCtx.strokeRect(x, y, width, height);
             };
 
+            this.getShapeEquation =function(){
+              console.log("POINTS", this.getAllSegmentPoint());
+            };
+
             this.setCoordByMouseMove = function(x1, y1, x2, y2) {
                 this.x = Math.min(x1, x2);
                 this.y = Math.min(y1, y2);
                 this.width = Math.abs(x1 - x2);
                 this.height = Math.abs(y1 - y2);
             };
+
+            this.getAllSegmentPoint = function(){
+              var segmentsPoints = [];
+              segmentsPoints.push({x:this.x, y:this.y});
+              segmentsPoints.push({x:this.x+this.width, y:this.y});
+              segmentsPoints.push({x:this.x+this.width, y:this.y-this.height});
+              segmentsPoints.push({x:this.x, y:this.y-this.height});
+              return segmentsPoints;
+            }
         };
 
+        RectangleShape.prototype = SuperShape;
+
         var LineShape = function(info) {
+            this.id = this.makeId(info.layer);
             this.type = 'line';
+            this.customName = "new "+this.type+" "+this.id;
             this.x1 = info.x1;
             this.y1 = info.y1;
             this.x2 = info.x2;
@@ -74,6 +108,8 @@ angular.module('canvasApp')
                 this.y2 = y2;
             }
         };
+
+        LineShape.prototype = SuperShape;
 
         // Public API here
         return {

@@ -13,9 +13,22 @@
                 </li>
             </ul>
         </li>
+        <li class="layers__layer  ng-class:{'active-layer':$index==selectedLayerIndex}" ng-repeat="layer in getCurrentFile(getCurrentFileId()).layers" ng-click="chooseLayer($index, layer.id)">
+            <ul class="layers__layer__options">
+                <li class="layer-icon text-center">
+                    <input type="checkbox" checked ng-checked="layer.visible" ng-click="layer.changeVisible()">
+                </li>
+                <li class="layer-icon text-center">
+                    <i ng-click="deleteLayer(getCurrentFileId(),layer.id)" class="glyphicon glyphicon-trash"></i>
+                </li>
+                <li class="layer-name text-center">
+                    {{layer.name}}
+                </li>
+            </ul>
+        </li>
     </ul>
     <ul ng-if="getCurrentFileId()!=null" class="layers__actions">
-        <li class="layer__action " ng-click="openNewLayerModal()">
+        <li class="layer__action " ng-click="openNewLayerModal(getCurrentFileId())">
             <i class="glyphicon glyphicon-plus"></i>
         </li>
     </ul>
